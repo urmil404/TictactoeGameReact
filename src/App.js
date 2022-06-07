@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
 import { ToastContainer, toast } from "react-toastify";
-import { Container, Button, Col, Row } from "reactstrap";
+import { Card, CardBody, Container, Button, Col, Row } from "reactstrap";
 
 import Icon from "./components/icons";
-import Card from "./components/CCard";
 
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -72,6 +71,12 @@ const App = () => {
     ) {
       setWinMessage(`${itemArray[2]} won`);
     }
+    if (
+      winMessage == "" &&
+      itemArray.filter((item) => item !== "empty").length == 9
+    ) {
+      setWinMessage("Draw");
+    }
   };
 
   const changeItem = (itemNumber) => {
@@ -95,7 +100,20 @@ const App = () => {
         <Col md={6} className="offset-md-3">
           <div className="grid">
             {itemArray.map((item, index) => (
-              <Card item={item} index={index} changeItem={changeItem} />
+              <Card
+                onClick={() => {
+                  changeItem(index);
+                }}
+              >
+                <CardBody
+                  className="box"
+                  style={{
+                    backgroundColor: item == "empty" ? "#8d3daf" : "#000000",
+                  }}
+                >
+                  <Icon name={item} />
+                </CardBody>
+              </Card>
             ))}
           </div>
           {winMessage ? (
