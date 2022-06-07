@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
 import { ToastContainer, toast } from "react-toastify";
-import { Card, CardBody, Container, Button, Col, Row } from "reactstrap";
+import { Container, Button, Col, Row } from "reactstrap";
+
 import Icon from "./components/icons";
+import Card from "./components/CCard";
 
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -93,16 +95,7 @@ const App = () => {
         <Col md={6} className="offset-md-3">
           <div className="grid">
             {itemArray.map((item, index) => (
-              <Card
-                color="warning"
-                onClick={() => {
-                  changeItem(index);
-                }}
-              >
-                <CardBody className="box">
-                  <Icon name={item} />
-                </CardBody>
-              </Card>
+              <Card item={item} index={index} changeItem={changeItem} />
             ))}
           </div>
           {winMessage ? (

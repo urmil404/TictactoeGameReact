@@ -16,7 +16,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #8D3DAF;
+  /* background-color: #8D3DAF; */
+  background-color: #000000;
 }
 .icon {
   font-size: 25px;
