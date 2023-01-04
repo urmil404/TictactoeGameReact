@@ -1,6 +1,3 @@
 # Tic Tac Toe Game
 
-## This project is Tic Tac Toe game using React
-
-
-"# TicTacToe-React" 
+## simple game to learn props and useState Hook of React
