@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Container, Button, Col, Row } from "reactstrap";
 
-import Icon from "./components/icons";
 import Card from "./components/CCard";
 
 import "react-toastify/dist/ReactToastify.css";
